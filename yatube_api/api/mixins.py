@@ -18,3 +18,8 @@ class CustomViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
         if instance.author != self.request.user:
             raise PermissionDenied('Удаление чужого контента запрещено!')
         super().perform_destroy(instance)
+
+
+class FollowViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
+                    viewsets.GenericViewSet):
+    pass
