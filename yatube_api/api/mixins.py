@@ -20,6 +20,6 @@ class CustomViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
         super().perform_destroy(instance)
 
 
-class FollowViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
-                    viewsets.GenericViewSet):
+class CustomFollowViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
+                          viewsets.GenericViewSet):
     pass

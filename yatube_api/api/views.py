@@ -3,7 +3,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from posts.models import Comment, Follow, Group, Post
 from rest_framework import filters, permissions, viewsets
 
-from .mixins import CustomViewSet, FollowViewSet
+from .mixins import CustomViewSet, CustomFollowViewSet
 from .serializers import (CommentSerializer, FollowSerializer, GroupSerializer,
                           PostSerializer)
 
@@ -30,7 +30,7 @@ class CommentViewSet(CustomViewSet):
         return serializer.save(author=self.request.user, post=post)
 
 
-class FollowViewSet(FollowViewSet):
+class FollowViewSet(CustomFollowViewSet):
     serializer_class = FollowSerializer
     permission_classes = (permissions.IsAuthenticated,)
     filter_backends = (DjangoFilterBackend, filters.SearchFilter)
