@@ -6,33 +6,44 @@
 
 - Клонировать репозиторий и перейти в него в командной строке:
 
-`git clone https://github.com/mklstpn/api_final_yatube.git`
+```console
 
-`cd api_final_yatube`
+git clone https://github.com/mklstpn/api_final_yatube.git
+
+cd api_final_yatube
+```
 
 - Cоздать и активировать виртуальное окружение:
 
-`python3 -m venv env`
+```console
+python3 -m venv env
 
-`source env/bin/activate`
+source env/bin/activate
 
-`python3 -m pip install --upgrade pip`
+python3 -m pip install --upgrade pip
+```
 - Установить зависимости из файла requirements.txt:
 
-`pip install -r requirements.txt`
+```console
+pip install -r requirements.txt
+```
 - Выполнить миграции:
 
-`python3 manage.py migrate`
+```console
+python3 manage.py migrate
+```
 - Запустить проект:
 
-`python3 manage.py runserver`
+```console
+python3 manage.py runserver
+```
 
 ## Примеры запросов к API:
 
 ### Создание публикации:
 
 При POST запросе на /api/v1/posts/ 
-```
+```json
 {
   "text": "string",
   "image": "string",
@@ -40,7 +51,7 @@
 }
 ```
 Response будет примерно такого содержания:
-```
+```json
 [
   {
     "id": 0,
@@ -55,7 +66,7 @@ Response будет примерно такого содержания:
 ### Обновление публикации:
 
 При PUT запросе на /api/v1/posts/{id}/ 
-```
+```json
 {
   "text": "string",
   "image": "string",
@@ -63,7 +74,7 @@ Response будет примерно такого содержания:
 }
 ```
 Response будет примерно такого содержания:
-```
+```json
 {
   "id": 0,
   "author": "string",
@@ -76,13 +87,13 @@ Response будет примерно такого содержания:
 ### Добавление комментариев:
 
 При POST запросе на /api/v1/posts/{id}/ 
-```
+```json
 {
   "text": "string"
 }
 ```
 Response будет примерно такого содержания:
-```
+```json
 {
   "id": 0,
   "author": "string",
@@ -94,14 +105,14 @@ Response будет примерно такого содержания:
 ### Получить JWT-токен:
 
 При POST запросе на /api/v1/jwt/create/ 
-```
+```json
 {
   "username": "string",
   "password": "string"
 }
 ```
 Response будет примерно такого содержания:
-```
+```json
 {
   "username": "string"
 }
