@@ -42,7 +42,7 @@ python3 manage.py runserver
 
 ### Create post:
 
-At POST запросе на /api/v1/posts/ 
+At POST request on /api/v1/posts/ 
 ```json
 {
   "text": "string",
@@ -50,7 +50,7 @@ At POST запросе на /api/v1/posts/
   "group": 0
 }
 ```
-Response будет примерно такого содержания:
+Response will contain:
 ```json
 [
   {
@@ -63,9 +63,9 @@ Response будет примерно такого содержания:
   }
 ]
 ```
-### Обновление публикации:
+### Update post:
 
-При PUT запросе на /api/v1/posts/{id}/ 
+At PUT request on /api/v1/posts/{id}/ 
 ```json
 {
   "text": "string",
@@ -73,7 +73,7 @@ Response будет примерно такого содержания:
   "group": 0
 }
 ```
-Response будет примерно такого содержания:
+Response will contain:
 ```json
 {
   "id": 0,
@@ -84,9 +84,9 @@ Response будет примерно такого содержания:
   "group": 0
 }
 ```
-### Добавление комментариев:
+### Add comment:
 
-При POST request on /api/v1/posts/{id}/ 
+At POST request on /api/v1/posts/{id}/ 
 ```json
 {
   "text": "string"
