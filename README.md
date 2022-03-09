@@ -1,10 +1,10 @@
-## Описание:
+## Description:
 
-Учебный проект в котором созданы основные элементы API для социальной сети. 
+Pet-project whitch realized basic elements of API for social network.
 
-## Как развернуть проект:
+## How to build project:
 
-- Клонировать репозиторий и перейти в него в командной строке:
+- Clone this repo and go into project dir via command promt:
 
 ```console
 
@@ -13,7 +13,7 @@ git clone https://github.com/mklstpn/api_final_yatube.git
 cd api_final_yatube
 ```
 
-- Cоздать и активировать виртуальное окружение:
+- Create and activate virtual env:
 
 ```console
 python3 -m venv env
@@ -22,27 +22,27 @@ source env/bin/activate
 
 python3 -m pip install --upgrade pip
 ```
-- Установить зависимости из файла requirements.txt:
+- Install dependencies from requirements.txt:
 
 ```console
 pip install -r requirements.txt
 ```
-- Выполнить миграции:
+- Run migrations:
 
 ```console
 python3 manage.py migrate
 ```
-- Запустить проект:
+- Run project:
 
 ```console
 python3 manage.py runserver
 ```
 
-## Примеры запросов к API:
+## Examples:
 
-### Создание публикации:
+### Create post:
 
-При POST запросе на /api/v1/posts/ 
+At POST запросе на /api/v1/posts/ 
 ```json
 {
   "text": "string",
@@ -86,13 +86,13 @@ Response будет примерно такого содержания:
 ```
 ### Добавление комментариев:
 
-При POST запросе на /api/v1/posts/{id}/ 
+При POST request on /api/v1/posts/{id}/ 
 ```json
 {
   "text": "string"
 }
 ```
-Response будет примерно такого содержания:
+Response will contain:
 ```json
 {
   "id": 0,
@@ -102,16 +102,16 @@ Response будет примерно такого содержания:
   "post": 0
 }
 ```
-### Получить JWT-токен:
+### Get JWT-token:
 
-При POST запросе на /api/v1/jwt/create/ 
+At POST request on /api/v1/jwt/create/ 
 ```json
 {
   "username": "string",
   "password": "string"
 }
 ```
-Response будет примерно такого содержания:
+Response will contain:
 ```json
 {
   "username": "string"
